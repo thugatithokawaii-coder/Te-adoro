@@ -351,6 +351,9 @@ function iniciarGalaxia(){
     else{await audio.play();playBtn.textContent='⏸️';}
     isPlaying=!isPlaying;
   });
+ setTimeout(()=>{
+  document.getElementById("libro-container").style.display="block";
+},180000);
   function formatTime(sec){if(!isFinite(sec))return'0:00';const m=Math.floor(sec/60);const s=Math.floor(sec%60).toString().padStart(2,'0');return m+':'+s;}
   audio.addEventListener('timeupdate',()=>{
   const percent=(audio.currentTime/audio.duration)*100;
